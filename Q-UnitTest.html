@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Test Suite</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.0.css">
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.14.0.js"></script>
+    <script>
+        
+        showPorselainWishPage();
+        function showPorselainWishPage() {
+
+        };
+
+          QUnit.test('Gjør som den skal - sletting', function(assert) { 
+            let preDelete = wishlist.length;
+            deleteWish(2);
+            let actual = wishlist.length;
+            let expected = preDelete - 1;
+            assert.equal(actual,expected);
+          });
+
+          QUnit.test('Gjør som den skal - legge til', function(assert) { 
+            tempWish[0].name="Hei";
+            tempWish[0].price="Hei";
+            tempWish[0].wish="Hei";
+            tempWish[0].have="Hei";
+            let preAdd = wishlist.length;
+            addWish();
+            let actual = wishlist.length;
+            let expected = preAdd + 1;
+            assert.equal(actual,expected);
+          });
+
+          QUnit.test('Takler ugyldig input - legge til', function(assert) { 
+            tempWish[0].name="Hei";
+            tempWish[0].price="";
+            tempWish[0].wish="Hei";
+            tempWish[0].have="";
+            let preAdd = wishlist.length;
+            addWish();
+            let actual = wishlist.length;
+            let expected = preAdd;
+            assert.equal(actual,expected);
+          });
+
+          QUnit.test('Takler ugyldid input - edit', function(assert) { 
+            tempWish[0].name = "";
+            let preEdit = wishlist[0].name;
+            editWish(0);
+            let actual = wishlist[0].name;
+            let expected = preEdit;
+            assert.equal(actual,expected);
+          });
+        
+      </script>
+</body>
+</html>

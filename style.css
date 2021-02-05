@@ -1,0 +1,283 @@
+
+/* Navigation bar + menu's */
+
+.header {
+  background-color: #b4b4b4;
+  color: #ffffff;
+  padding: 15px;
+}
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 18px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-right { 
+  right: 0px;
+  /* font-size: 20px; */
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+ .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+} 
+ .dropdown-content a { 
+    color: black;
+    padding: 12px 16px; 
+    text-decoration: none; 
+    display: block;  
+ }
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #999797;
+} 
+
+/* #returnbtn{
+  font-size: 2rem;  
+} */
+
+/* Main wishlist page */
+
+#mainWishlist {
+  position: absolute;
+  border: 2px solid black;
+  top: 20vh;
+  left: 30vw;
+  height: 60vh;
+  width: 60vw;
+}
+
+#mainWishlistPic {
+  position: absolute;
+  background-image: url(mywishlist.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  border: 2px solid black;
+  top: 20vh;
+  left: 30vw;
+  height: 50vh;
+  width: 60vw;
+}
+
+#wishbtn {
+  position: absolute;
+  border: 3px solid #292828e7;
+  font-style: italic;
+  text-align: center;
+  font-size: 3rem;
+  height: 6vh;
+  width: 20vw;
+  top: 30vh;
+  left: 10vw;
+  
+}
+
+#wishbtn2 {
+  position: absolute;
+  border: 3px solid #292828e7;
+  font-style: italic;
+  text-align: center;
+  font-size: 3rem;
+  height: 6vh;
+  width: 25vw;
+  top: 40vh;
+  left: 5vw;
+}
+
+/* #wishlist2 {
+  background-color: black;
+} */
+
+#editbtn {
+  position: absolute;
+  border: solid 2px black;
+  top: 73vh;
+  left: 63vw;
+  height: 5vh;
+  width: 10vw;
+  text-align: center;
+
+}
+
+#viewbtn {
+  position: absolute;
+  border: solid 2px black;
+  top: 73vh;
+  left: 45vw;
+  height: 5vh;
+  width: 10vw;
+  text-align: center;
+}
+
+/* Wishlist 2021 */
+
+#pic1 {
+  position: absolute;
+  border: 10px solid red;
+  height: 40vh;
+  width: 30vw;
+  top: 30vh;
+  left: 3vw;
+}
+#pic2 {
+  position: absolute;
+  border: 10px solid red;
+  height: 40vh;
+  width: 30vw;
+  top: 30vh;
+  left: 35vw;
+  background-image: url(ironmanLego.jpg);
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* #pic2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+} */
+
+#pic3 {
+  position: absolute;
+  border: 10px solid red;
+  height: 40vh;
+  width: 30vw;
+  top: 30vh;
+  left: 67vw;
+}
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup3 {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext1 {
+  visibility: hidden;
+  width: 30vw;
+  height: 30vh;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -85%;
+  left: 14%;
+  margin-left: -80px;
+}
+
+.popup .popuptext2 {
+  visibility: hidden;
+  width: 30vw;
+  height: 30vh;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -85%;
+  left: 14%;
+  margin-left: -80px;
+}
+
+.popup3 .popuptext3 {
+  visibility: hidden;
+  width: 80vw;
+  height: 30vh;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 100px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: -65%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.popup3 .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+#save2 {
+  position: absolute;
+  size: 3rem;
+  height: 20px;
+  width: 100px;
+  z-index: 1;
+  bottom: 5%;
+  left: 80%;
+
+}
+/*  */
+
+#pic-info {
+  position: relative;
+  border: 3px solid black;
+  top: 20vh;
+  left: 63vw;
+  height: 40vh;
+  width: 35vw;
+  text-align: center;
+}
