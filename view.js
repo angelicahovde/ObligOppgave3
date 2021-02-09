@@ -1,3 +1,23 @@
+var navBar = `<div class="header">
+<div class="fa fa-ellipsis-v dropdown" style="float:right;color:black;font-size:50px;">
+        <div class="dropdown-content dropdown-right">
+            <a href="#">Account</a>
+            <a href="#">Access</a>
+            <a href="#" onclick="newWishlistPage()">Add new wishlist</a>
+            <a href="#">Delete account</a>
+            <a href="#">Log out</a>
+        </div>
+</div>
+<div class="dropdown">
+    <button class="dropbtn">MENU</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showWishlistPage()">My Wishlist's</a>
+            <a href="#" onclick="showWishlist2021Page()">Wishlist 2021</a>
+            <a href="#" onclick="showPorselainWishPage()">Porselain tableware</a>
+            <a href="#">Wishlist 300</a>
+        </div> 
+</div>
+</div>`;
 
 showWishlistPage();
 
@@ -44,8 +64,8 @@ function showPorselainWishPage() {
     let showPorselainWish = `
                             <button onclick="addWishView()">Add wish</button>
                             `;
-                            for (i=0;i < wishlist.length; i ++){
-                                const wish = wishlist[i];
+                            for (i=0;i < modell.wishlist.length; i ++){
+                                const wish = modell.wishlist[i];
                                 showPorselainWish += `<p>Name: ${wish.name}</p>
                                 <p>Price: ${wish.price}</p>
                                 <p>Wish: ${wish.wish}</p>
@@ -59,10 +79,10 @@ function showPorselainWishPage() {
 
 function addWishView() {
     let addWishHTML = `
-        <input oninput="tempWish[0].name=this.value">Navn</input><br>
-        <input oninput="tempWish[0].price=this.value">Pris</input><br>
-        <input oninput="tempWish[0].wish=this.value">Ønsker antall</input><br>
-        <input oninput="tempWish[0].have=this.value">Har antall</input><br>
+        <input oninput="modell.tempWish[0].name=this.value">Navn</input><br>
+        <input oninput="modell.tempWish[0].price=this.value">Pris</input><br>
+        <input oninput="modell.tempWish[0].wish=this.value">Ønsker antall</input><br>
+        <input oninput="modell.tempWish[0].have=this.value">Har antall</input><br>
         <button onclick="addWish()">Legg til</button>
     `;
     appHTML.innerHTML = navBar + addWishHTML;
@@ -71,10 +91,10 @@ function addWishView() {
 function editWishView(index) {
     
     let editWishHTML = `
-        <input oninput="tempWish[0].name=this.value" value="${wishlist[index].name}"></input>
-        <input oninput="tempWish[0].price=this.value" value="${wishlist[index].price}"></input>
-        <input oninput="tempWish[0].wish=this.value" value="${wishlist[index].wish}"></input>
-        <input oninput="tempWish[0].have=this.value" value="${wishlist[index].have}"></input>
+        <input oninput="modell.tempWish[0].name=this.value" value="${modell.wishlist[index].name}"></input>
+        <input oninput="modell.tempWish[0].price=this.value" value="${modell.wishlist[index].price}"></input>
+        <input oninput="modell.tempWish[0].wish=this.value" value="${modell.wishlist[index].wish}"></input>
+        <input oninput="modell.tempWish[0].have=this.value" value="${modell.wishlist[index].have}"></input>
         <button onclick="editWish(${index})">Rediger</button>
     `;
     appHTML.innerHTML = navBar + editWishHTML;
