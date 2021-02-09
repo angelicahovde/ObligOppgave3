@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Test Suite</title>
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.14.0.css">
-    <script src="model.js"></script>
-    <script src="controller.js"></script>
+    <script src="model.js" defer></script>
+    <script src="controller.js" defer></script>
   </head>
   <body>
     <div id="qunit"></div>
@@ -20,42 +20,42 @@
         };
 
           QUnit.test('Gjør som den skal - sletting', function(assert) { 
-            let preDelete = wishlist.length;
+            let preDelete = modell.wishlist.length;
             deleteWish(2);
-            let actual = wishlist.length;
+            let actual = modell.wishlist.length;
             let expected = preDelete - 1;
             assert.equal(actual,expected);
           });
 
           QUnit.test('Gjør som den skal - legge til', function(assert) { 
-            tempWish[0].name="Hei";
-            tempWish[0].price="Hei";
-            tempWish[0].wish="Hei";
-            tempWish[0].have="Hei";
-            let preAdd = wishlist.length;
+            modell.tempWish[0].name="Hei";
+            modell.tempWish[0].price="Hei";
+            modell.tempWish[0].wish="Hei";
+            modell.tempWish[0].have="Hei";
+            let preAdd = modell.wishlist.length;
             addWish();
-            let actual = wishlist.length;
+            let actual = modell.wishlist.length;
             let expected = preAdd + 1;
             assert.equal(actual,expected);
           });
 
           QUnit.test('Takler ugyldig input - legge til', function(assert) { 
-            tempWish[0].name="Hei";
-            tempWish[0].price="";
-            tempWish[0].wish="Hei";
-            tempWish[0].have="";
-            let preAdd = wishlist.length;
+            modell.tempWish[0].name="Hei";
+            modell.tempWish[0].price="";
+            modell.tempWish[0].wish="Hei";
+            modell.tempWish[0].have="";
+            let preAdd = modell.wishlist.length;
             addWish();
-            let actual = wishlist.length;
+            let actual = modell.wishlist.length;
             let expected = preAdd;
             assert.equal(actual,expected);
           });
 
           QUnit.test('Takler ugyldid input - edit', function(assert) { 
-            tempWish[0].name = "";
-            let preEdit = wishlist[0].name;
+            modell.tempWish[0].name = "";
+            let preEdit = modell.wishlist[0].name;
             editWish(0);
-            let actual = wishlist[0].name;
+            let actual = modell.wishlist[0].name;
             let expected = preEdit;
             assert.equal(actual,expected);
           });
